@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://model.servicos.lecomtest.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://model.servicos.lecomtest.com" xmlns:intf="http://model.servicos.lecomtest.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://model.servicos.lecomtest.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="equals">
+    <complexType>
+     <sequence>
+      <element name="obj" type="xsd:anyType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="equalsResponse">
+    <complexType>
+     <sequence>
+      <element name="equalsReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="hashCode">
+    <complexType/>
+   </element>
+   <element name="hashCodeResponse">
+    <complexType>
+     <sequence>
+      <element name="hashCodeReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getNome">
+    <complexType/>
+   </element>
+   <element name="getNomeResponse">
+    <complexType>
+     <sequence>
+      <element name="getNomeReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getValor">
+    <complexType/>
+   </element>
+   <element name="getValorResponse">
+    <complexType>
+     <sequence>
+      <element name="getValorReturn" type="xsd:decimal"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getCodigo">
+    <complexType/>
+   </element>
+   <element name="getCodigoResponse">
+    <complexType>
+     <sequence>
+      <element name="getCodigoReturn" type="xsd:long"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setCodigo">
+    <complexType>
+     <sequence>
+      <element name="codigo" type="xsd:long"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setCodigoResponse">
+    <complexType/>
+   </element>
+   <element name="setValor">
+    <complexType>
+     <sequence>
+      <element name="valor" type="xsd:decimal"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setValorResponse">
+    <complexType/>
+   </element>
+   <element name="setNome">
+    <complexType>
+     <sequence>
+      <element name="nome" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setNomeResponse">
+    <complexType/>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="setCodigoResponse">
+
+      <wsdl:part element="impl:setCodigoResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setCodigoRequest">
+
+      <wsdl:part element="impl:setCodigo" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setValorResponse">
+
+      <wsdl:part element="impl:setValorResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setNomeResponse">
+
+      <wsdl:part element="impl:setNomeResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setNomeRequest">
+
+      <wsdl:part element="impl:setNome" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getValorRequest">
+
+      <wsdl:part element="impl:getValor" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="equalsRequest">
+
+      <wsdl:part element="impl:equals" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="hashCodeRequest">
+
+      <wsdl:part element="impl:hashCode" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getNomeRequest">
+
+      <wsdl:part element="impl:getNome" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getNomeResponse">
+
+      <wsdl:part element="impl:getNomeResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setValorRequest">
+
+      <wsdl:part element="impl:setValor" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="hashCodeResponse">
+
+      <wsdl:part element="impl:hashCodeResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="equalsResponse">
+
+      <wsdl:part element="impl:equalsResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getCodigoRequest">
+
+      <wsdl:part element="impl:getCodigo" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getCodigoResponse">
+
+      <wsdl:part element="impl:getCodigoResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getValorResponse">
+
+      <wsdl:part element="impl:getValorResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="Servico">
+
+      <wsdl:operation name="equals">
+
+         <wsdl:input message="impl:equalsRequest" name="equalsRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:equalsResponse" name="equalsResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="hashCode">
+
+         <wsdl:input message="impl:hashCodeRequest" name="hashCodeRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:hashCodeResponse" name="hashCodeResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getNome">
+
+         <wsdl:input message="impl:getNomeRequest" name="getNomeRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getNomeResponse" name="getNomeResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getValor">
+
+         <wsdl:input message="impl:getValorRequest" name="getValorRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getValorResponse" name="getValorResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getCodigo">
+
+         <wsdl:input message="impl:getCodigoRequest" name="getCodigoRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getCodigoResponse" name="getCodigoResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setCodigo">
+
+         <wsdl:input message="impl:setCodigoRequest" name="setCodigoRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setCodigoResponse" name="setCodigoResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setValor">
+
+         <wsdl:input message="impl:setValorRequest" name="setValorRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setValorResponse" name="setValorResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setNome">
+
+         <wsdl:input message="impl:setNomeRequest" name="setNomeRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setNomeResponse" name="setNomeResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="ServicoSoapBinding" type="impl:Servico">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="equals">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="equalsRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="equalsResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="hashCode">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="hashCodeRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="hashCodeResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getNome">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getNomeRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getNomeResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getValor">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getValorRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getValorResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getCodigo">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getCodigoRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getCodigoResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setCodigo">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setCodigoRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setCodigoResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setValor">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setValorRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setValorResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setNome">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setNomeRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setNomeResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="ServicoService">
+
+      <wsdl:port binding="impl:ServicoSoapBinding" name="Servico">
+
+         <wsdlsoap:address location="http://localhost:8080/servicos/services/Servico"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

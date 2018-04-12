@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from ServicoService WSDL service -->
+
+  <service name="Servico" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://model.servicos.lecomtest.com"/>
+      <parameter name="wsdlServiceElement" value="ServicoService"/>
+      <parameter name="schemaQualified" value="http://model.servicos.lecomtest.com"/>
+      <parameter name="wsdlServicePort" value="Servico"/>
+      <parameter name="className" value="com.lecomtest.servicos.model.Servico"/>
+      <parameter name="wsdlPortType" value="Servico"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://model.servicos.lecomtest.com" xmlns:retNS="http://model.servicos.lecomtest.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="equals" qname="operNS:equals" returnQName="retNS:equalsReturn" returnType="rtns:boolean" soapAction="">
+        <parameter xmlns:pns="http://model.servicos.lecomtest.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:obj" type="tns:anyType"/>
+      </operation>
+      <operation xmlns:operNS="http://model.servicos.lecomtest.com" xmlns:retNS="http://model.servicos.lecomtest.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="hashCode" qname="operNS:hashCode" returnQName="retNS:hashCodeReturn" returnType="rtns:int" soapAction="">
+      </operation>
+      <operation xmlns:operNS="http://model.servicos.lecomtest.com" xmlns:retNS="http://model.servicos.lecomtest.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getNome" qname="operNS:getNome" returnQName="retNS:getNomeReturn" returnType="rtns:string" soapAction="">
+      </operation>
+      <operation xmlns:operNS="http://model.servicos.lecomtest.com" xmlns:retNS="http://model.servicos.lecomtest.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getValor" qname="operNS:getValor" returnQName="retNS:getValorReturn" returnType="rtns:decimal" soapAction="">
+      </operation>
+      <operation xmlns:operNS="http://model.servicos.lecomtest.com" xmlns:retNS="http://model.servicos.lecomtest.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getCodigo" qname="operNS:getCodigo" returnQName="retNS:getCodigoReturn" returnType="rtns:long" soapAction="">
+      </operation>
+      <operation xmlns:operNS="http://model.servicos.lecomtest.com" name="setCodigo" qname="operNS:setCodigo" soapAction="">
+        <parameter xmlns:pns="http://model.servicos.lecomtest.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:codigo" type="tns:long"/>
+      </operation>
+      <operation xmlns:operNS="http://model.servicos.lecomtest.com" name="setValor" qname="operNS:setValor" soapAction="">
+        <parameter xmlns:pns="http://model.servicos.lecomtest.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:valor" type="tns:decimal"/>
+      </operation>
+      <operation xmlns:operNS="http://model.servicos.lecomtest.com" name="setNome" qname="operNS:setNome" soapAction="">
+        <parameter xmlns:pns="http://model.servicos.lecomtest.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:nome" type="tns:string"/>
+      </operation>
+      <parameter name="allowedMethods" value="getValor hashCode setNome equals setValor getNome setCodigo getCodigo"/>
+
+      <typeMapping xmlns:ns="http://model.servicos.lecomtest.com" qname="ns:&gt;equalsResponse" type="java:com.lecomtest.servicos.model.EqualsResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://model.servicos.lecomtest.com" qname="ns:&gt;getNomeResponse" type="java:com.lecomtest.servicos.model.GetNomeResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://model.servicos.lecomtest.com" qname="ns:&gt;setValor" type="java:com.lecomtest.servicos.model.SetValor" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://model.servicos.lecomtest.com" qname="ns:&gt;setNome" type="java:com.lecomtest.servicos.model.SetNome" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://model.servicos.lecomtest.com" qname="ns:&gt;getCodigo" type="java:com.lecomtest.servicos.model.GetCodigo" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://model.servicos.lecomtest.com" qname="ns:&gt;setCodigo" type="java:com.lecomtest.servicos.model.SetCodigo" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://model.servicos.lecomtest.com" qname="ns:&gt;setCodigoResponse" type="java:com.lecomtest.servicos.model.SetCodigoResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://model.servicos.lecomtest.com" qname="ns:&gt;setValorResponse" type="java:com.lecomtest.servicos.model.SetValorResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://model.servicos.lecomtest.com" qname="ns:&gt;getCodigoResponse" type="java:com.lecomtest.servicos.model.GetCodigoResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://model.servicos.lecomtest.com" qname="ns:&gt;getValor" type="java:com.lecomtest.servicos.model.GetValor" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://model.servicos.lecomtest.com" qname="ns:&gt;hashCodeResponse" type="java:com.lecomtest.servicos.model.HashCodeResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://model.servicos.lecomtest.com" qname="ns:&gt;hashCode" type="java:com.lecomtest.servicos.model.HashCode" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://model.servicos.lecomtest.com" qname="ns:&gt;getValorResponse" type="java:com.lecomtest.servicos.model.GetValorResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://model.servicos.lecomtest.com" qname="ns:&gt;getNome" type="java:com.lecomtest.servicos.model.GetNome" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://model.servicos.lecomtest.com" qname="ns:&gt;setNomeResponse" type="java:com.lecomtest.servicos.model.SetNomeResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+  </service>
+</deployment>

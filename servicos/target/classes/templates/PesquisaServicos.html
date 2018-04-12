@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="LayoutDefault">
+<head>
+<title>Pesquisa de serviços</title>
+</head>
+<section layout:fragment="conteudo">
+	<div layout:include="MensagemGeral"></div>
+	
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<div class="clearfix">
+				<h1 class="panel-title cliente-panel">Pesquisa de serviços</h1>
+				<a class="btn btn-link link-panel" href="/servicos/novo">Novo
+					serviço</a>
+			</div>
+		</div>
+
+		<div class="panel-body table-responsive">
+			<table class="table table-bordered table-striped">
+				<thead>
+					<tr>
+						<th class="text-center col-md-1">Código</th>
+						<th class="text-left">Nome</th>
+						<th class="text-right col-md-2">Valor</th>
+						<th class="col-md-1"></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="servico : ${servicos}">
+						<td class="text-center" th:text="${servico.codigo}"></td>
+						<td th:text="${servico.nome}"></td>
+						<td class="text-right" th:text="|R$ ${{servico.valor}}|"></td>
+						<td class="text-center">
+							<a class="btn btn-link btn-xs" th:href="@{/servicos/{codigo}(codigo=${servico.codigo})}"
+								title="Editar" rel="tooltip" data-placement="top">
+								<span class="glyphicon glyphicon-pencil"></span>
+							</a>
+							<a class="btn btn-link btn-xs" data-toggle="modal" data-target="#confirmacaoRemoverServicoModal"
+								th:attr="data-codigo=${servico.codigo}, data-nome=${servico.nome}"
+								title="Excluir" rel="tooltip" data-placement="top">
+								<span class="glyphicon glyphicon-remove"></span>
+							</a>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="5" th:if="${#lists.isEmpty(servicos)}">Nenhum serviço encontrado.</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		
+		<div layout:include="ConfirmacaoRemoverServico"></div>
+		
+	</div>
+</section>
+</html>

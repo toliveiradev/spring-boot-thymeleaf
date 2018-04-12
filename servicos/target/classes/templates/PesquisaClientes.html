@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="LayoutDefault">
+<head>
+<title>Pesquisa de clientes</title>
+</head>
+<section layout:fragment="conteudo">
+	<div layout:include="MensagemGeral"></div>
+
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<div class="clearfix">
+				<h1 class="panel-title cliente-panel">Pesquisa de clientes</h1>
+				<a class="btn btn-link link-panel" href="/clientes/novo">Novo
+					cliente</a>
+			</div>
+		</div>
+
+		<div class="panel-body table-responsive">
+			<table class="table table-bordered table-striped">
+				<thead>
+					<tr>
+						<th class="text-center col-md-1">Código</th>
+						<th class="text-left">Nome</th>
+						<th class="text-center col-md-2">CNPJ</th>
+						<th class="text-center col-md-2">Telefone</th>
+						<th class="text-center col-md-1">Tipo</th>
+						<th class="col-md-1"></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="cliente : ${clientes}">
+						<td class="text-center" th:text="${cliente.codigo}"></td>
+						<td th:text="${cliente.nome}"></td>
+						<td class="text-center" th:text="${cliente.cnpj}"></td>
+						<td class="text-center" th:text="${cliente.telefone}"></td>
+						<td class="text-center" th:text="${cliente.tipo.descricao}"></td>
+						<td class="text-center">
+							<a class="btn btn-link btn-xs" th:href="@{/clientes/{codigo}(codigo=${cliente.codigo})}"
+								title="Editar" rel="tooltip" data-placement="top">
+								<span class="glyphicon glyphicon-pencil"></span>
+							</a>
+							<a class="btn btn-link btn-xs" data-toggle="modal" data-target="#confirmacaoRemoverClienteModal"
+								th:attr="data-codigo=${cliente.codigo}, data-nome=${cliente.nome}"
+								title="Excluir" rel="tooltip" data-placement="top">
+								<span class="glyphicon glyphicon-remove"></span>
+							</a>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="5" th:if="${#lists.isEmpty(clientes)}">Nenhum cliente encontrado.</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		
+		<div layout:include="ConfirmacaoRemoverCliente"></div>
+	</div>
+</section>
+</html>
