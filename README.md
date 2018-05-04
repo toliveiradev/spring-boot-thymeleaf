@@ -16,19 +16,10 @@ Requisitos técnicos:
 - Banco pode ser o MySQL
 - Front-end pode ser feito da forma que quiser
 
-# spring-boot-thymeleaf
+Criar a base de dados a aplicação `create database servicos;`
 
-Criar uma base de dados chamada servicos
-# create database servicos;
+O arquivo `aplicattion.properties` que está na pasta `servicos\src\main\resources` contém user e password do MySQL Server para acesso da aplicação, também está a porta que será usada para o Tomcat.
 
-Alterar o arquivo 
-# aplicattion.properties 
-Que está na pasta 
-# servicos\src\main\resources
-Contém user e password do MySQL server para acesso da aplicação, nesse arquivo também está a porta que será usada para o Tomcat, caso desejar, poderá ser alterada.
+Para acesso aos serviços em formato JSON acesse `localhost:porta/rest/servicos/`
 
-Para acesso aos serviços em formato JSON acesse
-# localhost:porta/rest/servicos/
-
-Para mais detalhes de tudo que foi usado no projeto consulte
-# pom.xml
+Para mais detalhes sobre o que foi usado no projeto consulte o arquivo `pom.xml`
