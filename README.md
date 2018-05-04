@@ -16,10 +16,10 @@ Requisitos técnicos:
 - Banco pode ser o MySQL
 - Front-end pode ser feito da forma que quiser
 
-Criar a base de dados a aplicação `create database servicos;`
+Criar a base de dados da aplicação `create database servicos;`
 
-O arquivo `aplicattion.properties` que está na pasta `servicos\src\main\resources` contém user e password do MySQL Server para acesso da aplicação, também está a porta que será usada para o Tomcat.
+O arquivo `aplicattion.properties` que está na pasta `servicos\src\main\resources` contém user e password do MySQL Server para acesso da aplicação, também está a porta que será usada pelo Tomcat.
 
-Para acesso aos serviços em formato JSON acesse `localhost:porta/rest/servicos/`
+Para acesso aos **serviços** em formato JSON acesse `localhost:porta/rest/servicos/`
 
 Para mais detalhes sobre o que foi usado no projeto consulte o arquivo `pom.xml`
